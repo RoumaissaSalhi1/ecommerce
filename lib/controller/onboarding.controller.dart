@@ -1,6 +1,5 @@
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/data/datasource/static/static.dart';
-import 'package:ecommece/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +16,7 @@ class OnboardingControllerImp extends OnboardingController {
     currentPage++;
     if (currentPage > OnBoardingList.length - 1) {
       Get.offAllNamed(AppRoute.login);
-      print('last page');
+      
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);

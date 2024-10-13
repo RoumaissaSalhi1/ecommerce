@@ -4,4 +4,5 @@ class Imageasset {
   static const String onBoardingMarketPlace = '$rootImage/marketplace.png';
   static const String onBoardingPayment = '$rootImage/payment.png';
   static const String onBoardingTracking = '$rootImage/tracking.png';
+  static const String storeLogo = '$rootImage/store.png';
 }
