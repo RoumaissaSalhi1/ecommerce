@@ -1,5 +1,4 @@
 import 'package:ecommece/controller/auth/sign_up_controller.dart';
-import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/view/widget/auth/custom_sign_up_or_sign_in.dart';
 import 'package:ecommece/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommece/view/widget/auth/customheadertext.dart';
@@ -40,25 +39,33 @@ class SignUp extends StatelessWidget {
                   'Sign In With Your Email and Password or Continue With Social Media',
             ),
             const SizedBox(height: 64),
-            const CustomTextFormField(
-                hintText: 'Enter Your Username',
-                labelText: 'UserName',
-                suffixIcon: Icons.person_outline),
+            CustomTextFormField(
+              hintText: 'Enter Your Username',
+              labelText: 'UserName',
+              suffixIcon: Icons.person_outline,
+              fieldController: controller.userName,
+            ),
             const SizedBox(height: 24),
-            const CustomTextFormField(
-                hintText: 'Enter Your Email',
-                labelText: 'Email',
-                suffixIcon: Icons.email_outlined),
+            CustomTextFormField(
+              hintText: 'Enter Your Email',
+              labelText: 'Email',
+              suffixIcon: Icons.email_outlined,
+              fieldController: controller.email,
+            ),
             const SizedBox(height: 24),
-            const CustomTextFormField(
-                hintText: 'Enter Your Phone Number',
-                labelText: 'Phone Number',
-                suffixIcon: Icons.phone_outlined),
+            CustomTextFormField(
+              hintText: 'Enter Your Phone Number',
+              labelText: 'Phone Number',
+              suffixIcon: Icons.phone_outlined,
+              fieldController: controller.phone,
+            ),
             const SizedBox(height: 24),
-            const CustomTextFormField(
-                hintText: 'Enter Your Password',
-                labelText: 'Password',
-                suffixIcon: Icons.key_outlined),
+            CustomTextFormField(
+              hintText: 'Enter Your Password',
+              labelText: 'Password',
+              suffixIcon: Icons.key_outlined,
+              fieldController: controller.password,
+            ),
             const SizedBox(height: 16),
             const Text(
               'Forgot Password?',

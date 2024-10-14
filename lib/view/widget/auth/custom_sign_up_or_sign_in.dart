@@ -1,7 +1,5 @@
 import 'package:ecommece/core/constant/color.dart';
-import 'package:ecommece/core/constant/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomSignUpOrSignIn extends StatelessWidget {
   const CustomSignUpOrSignIn({

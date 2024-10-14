@@ -1,5 +1,4 @@
 import 'package:ecommece/controller/auth/login_controller.dart';
-import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommece/view/widget/auth/customheadertext.dart';
 import 'package:ecommece/view/widget/auth/customheadertitle.dart';
@@ -44,15 +43,19 @@ class Login extends StatelessWidget {
                   'Sign In With Your Email and Password or Continue With Social Media',
             ),
             const SizedBox(height: 64),
-            const CustomTextFormField(
-                hintText: 'Enter Your Email',
-                labelText: 'Email',
-                suffixIcon: Icons.email_outlined),
+            CustomTextFormField(
+              hintText: 'Enter Your Email',
+              labelText: 'Email',
+              suffixIcon: Icons.email_outlined,
+              fieldController: controller.email,
+            ),
             const SizedBox(height: 24),
-            const CustomTextFormField(
-                hintText: 'Enter Your Password',
-                labelText: 'Password',
-                suffixIcon: Icons.key_outlined),
+            CustomTextFormField(
+              hintText: 'Enter Your Password',
+              labelText: 'Password',
+              suffixIcon: Icons.key_outlined,
+              fieldController: controller.password,
+            ),
             const SizedBox(height: 16),
             const Text(
               'Forgot Password?',

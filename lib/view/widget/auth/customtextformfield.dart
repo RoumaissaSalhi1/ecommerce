@@ -6,7 +6,10 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     required this.labelText,
     required this.suffixIcon,
+    required this.fieldController,
   });
+
+  final TextEditingController fieldController;
 
   final String hintText;
   final String labelText;
@@ -16,10 +19,11 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      controller: fieldController,
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: Icon(
-         suffixIcon,
+          suffixIcon,
           color: Theme.of(context).colorScheme.outline,
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 30),
