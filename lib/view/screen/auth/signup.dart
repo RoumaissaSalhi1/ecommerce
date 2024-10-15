@@ -66,14 +66,12 @@ class SignUp extends StatelessWidget {
               suffixIcon: Icons.key_outlined,
               fieldController: controller.password,
             ),
-            const SizedBox(height: 16),
-            const Text(
-              'Forgot Password?',
-              textAlign: TextAlign.end,
-            ),
             const SizedBox(height: 24),
-            const Custombuttonauth(
-              buttonText: 'Sign In',
+            Custombuttonauth(
+              buttonText: 'Sign Up',
+              onPressed: () {
+                controller.signUp();
+              },
             ),
             const SizedBox(height: 24),
             CustomSignUpOrSignIn(

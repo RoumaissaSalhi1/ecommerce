@@ -57,13 +57,21 @@ class Login extends StatelessWidget {
               fieldController: controller.password,
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Forgot Password?',
-              textAlign: TextAlign.end,
+            InkWell(
+              onTap: () {
+                controller.goToForgetPassword();
+              },
+              child: const Text(
+                'Forgot Password?',
+                textAlign: TextAlign.end,
+              ),
             ),
             const SizedBox(height: 24),
-            const Custombuttonauth(
+             Custombuttonauth(
               buttonText: 'Sign In',
+              onPressed: () {
+                
+              },
             ),
             const SizedBox(height: 24),
             CustomSignUpOrSignIn(

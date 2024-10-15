@@ -3,21 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class LoginController extends GetxController {
-   late TextEditingController email;
+  late TextEditingController email;
   late TextEditingController password;
 
   login();
   goToSignUp();
+  goToForgetPassword();
 }
 
 class LoginControllerImp extends LoginController {
- 
   @override
   login() {}
 
   @override
   goToSignUp() {
     Get.offNamed(AppRoute.signup);
+  }
+
+  @override
+  goToForgetPassword() {
+    Get.offNamed(AppRoute.forgetPassword);
   }
 
   @override

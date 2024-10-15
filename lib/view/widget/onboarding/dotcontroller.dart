@@ -1,4 +1,4 @@
-import 'package:ecommece/controller/onboarding.controller.dart';
+import 'package:ecommece/controller/onboarding_controller.dart';
 import 'package:ecommece/core/constant/color.dart';
 import 'package:ecommece/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';

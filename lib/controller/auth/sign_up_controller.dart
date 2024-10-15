@@ -14,7 +14,9 @@ abstract class SignUpController extends GetxController {
 
 class SignUpControllerImp extends SignUpController {
   @override
-  signUp() {}
+  signUp() {
+    Get.offNamed(AppRoute.checkEmail);
+  }
 
   @override
   goToLogin() {

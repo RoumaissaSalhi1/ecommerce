@@ -1,4 +1,4 @@
-import 'package:ecommece/controller/onboarding.controller.dart';
+import 'package:ecommece/controller/onboarding_controller.dart';
 import 'package:ecommece/view/widget/onboarding/custombutton.dart';
 import 'package:ecommece/view/widget/onboarding/customslider.dart';
 import 'package:ecommece/view/widget/onboarding/dotcontroller.dart';
