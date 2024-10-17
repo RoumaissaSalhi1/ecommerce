@@ -1,8 +1,10 @@
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class ForgetPasswordController extends GetxController {
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
   checkEmail();
   goToVerifyCode();
@@ -11,7 +13,10 @@ abstract class ForgetPasswordController extends GetxController {
 class ForgetPasswordControllerImp extends ForgetPasswordController {
   @override
   goToVerifyCode() {
-    Get.offNamed(AppRoute.verifyCode);
+    var formData = formState.currentState;
+    if (formData!.validate()) {
+      Get.offNamed(AppRoute.verifyCode);
+    }
   }
 
   @override

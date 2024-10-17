@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
+
   late TextEditingController userName;
   late TextEditingController email;
   late TextEditingController phone;
@@ -15,7 +17,10 @@ abstract class SignUpController extends GetxController {
 class SignUpControllerImp extends SignUpController {
   @override
   signUp() {
-    Get.offNamed(AppRoute.checkEmail);
+    var formData = formState.currentState;
+    if (formData!.validate()) {
+      Get.offNamed(AppRoute.verifyCodeSignUp);
+    }
   }
 
   @override

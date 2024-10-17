@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class LoginController extends GetxController {
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
 
@@ -13,7 +14,10 @@ abstract class LoginController extends GetxController {
 
 class LoginControllerImp extends LoginController {
   @override
-  login() {}
+  login() {
+    var formData = formState.currentState;
+    if (formData!.validate()) {}
+  }
 
   @override
   goToSignUp() {

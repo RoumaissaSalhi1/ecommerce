@@ -37,17 +37,25 @@ class ResetPassword extends StatelessWidget {
             ),
             const SizedBox(height: 64),
             CustomTextFormField(
+              validator: (val) {
+                
+              },
               hintText: 'Enter Your New Password',
               labelText: 'New Password',
               suffixIcon: Icons.key_outlined,
               fieldController: controller.newPassword,
+              textInputType: TextInputType.visiblePassword,
             ),
             const SizedBox(height: 24),
             CustomTextFormField(
+              validator: (val) {
+                
+              },
               hintText: 'Re-Enter Your New Password',
               labelText: 'New Password',
               suffixIcon: Icons.key_outlined,
               fieldController: controller.rePassword,
+              textInputType: TextInputType.visiblePassword,
             ),
             const SizedBox(height: 24),
             Custombuttonauth(

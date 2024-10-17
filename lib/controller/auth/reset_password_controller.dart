@@ -1,5 +1,4 @@
 import 'package:ecommece/core/constant/routes.dart';
-import 'package:ecommece/view/screen/auth/forgetpassword/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

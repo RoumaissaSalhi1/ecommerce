@@ -1,12 +1,15 @@
+import 'package:ecommece/controller/auth/success_sing_up_controller.dart';
 import 'package:ecommece/core/constant/color.dart';
 import 'package:ecommece/view/widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SuccessSignUp extends StatelessWidget {
   const SuccessSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SuccessSingUpController controller = Get.put(SuccessSingUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -43,7 +46,10 @@ class SuccessSignUp extends StatelessWidget {
             Container(
                 width: 250,
                 child: Custombuttonauth(
-                    buttonText: 'Go To Login', onPressed: () {}))
+                    buttonText: 'Go To Login',
+                    onPressed: () {
+                      controller.goToLogin();
+                    }))
           ],
         ),
       ),

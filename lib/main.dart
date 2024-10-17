@@ -1,3 +1,4 @@
+import 'package:ecommece/binding.dart';
 import 'package:ecommece/core/constant/color.dart';
 import 'package:ecommece/core/localization/changelocal.dart';
 import 'package:ecommece/core/localization/translaion.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Language(),
+      initialBinding: MyBinding(),
       routes: routes,
     );
   }
