@@ -33,9 +33,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Language(),
+      // home: const Language(),
       initialBinding: MyBinding(),
-      routes: routes,
+      // routes: routes,
+      getPages: routes,
     );
   }
 }
