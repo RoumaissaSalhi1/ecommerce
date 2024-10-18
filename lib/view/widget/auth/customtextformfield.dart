@@ -1,5 +1,5 @@
-import 'package:ecommece/core/functions/valid_input.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
@@ -10,6 +10,8 @@ class CustomTextFormField extends StatelessWidget {
     required this.fieldController,
     required this.validator,
     required this.textInputType,
+    this.obsecureText,
+    this.onTap,
   });
 
   final TextEditingController fieldController;
@@ -19,6 +21,8 @@ class CustomTextFormField extends StatelessWidget {
   final IconData suffixIcon;
   final TextInputType textInputType;
   String? Function(String?)? validator;
+  final bool? obsecureText;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +30,19 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       keyboardType: textInputType,
       controller: fieldController,
+      // hide text in case password 
+      obscureText: obsecureText == null ? false : obsecureText!,
       decoration: InputDecoration(
         hintText: hintText,
-        suffixIcon: Icon(
-          suffixIcon,
-          color: Theme.of(context).colorScheme.outline,
+        suffixIcon: InkWell(
+          child: Icon(suffixIcon, color: Theme.of(context).colorScheme.outline),
+          onTap: onTap,
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 30),
         label: Text(labelText),
         border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30))),
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );

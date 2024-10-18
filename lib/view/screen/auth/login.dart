@@ -57,16 +57,24 @@ class Login extends StatelessWidget {
                 textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 24),
-              CustomTextFormField(
-                validator: (val) {
-                  return validInput(val!, 6, 20, 'password');
-                },
-                hintText: 'Enter Your Password',
-                labelText: 'Password',
-                suffixIcon: Icons.key_outlined,
-                fieldController: controller.password,
-                textInputType: TextInputType.visiblePassword,
-              ),
+              GetBuilder<LoginController>(builder: (context) {
+                return CustomTextFormField(
+                  validator: (val) {
+                    return validInput(val!, 6, 20, 'password');
+                  },
+                  hintText: 'Enter Your Password',
+                  labelText: 'Password',
+                  suffixIcon: controller.isShowPassword
+                      ? Icons.lock_outlined
+                      : Icons.no_encryption_gmailerrorred_outlined,
+                  fieldController: controller.password,
+                  textInputType: TextInputType.visiblePassword,
+                  obsecureText: controller.isShowPassword,
+                  onTap: () {
+                    controller.showPassword();
+                  },
+                );
+              }),
               const SizedBox(height: 16),
               InkWell(
                 onTap: () {
