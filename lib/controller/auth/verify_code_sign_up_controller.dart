@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 abstract class VerifyCodeSignUpController extends GetxController {
   late String code;
+  String? email;
   checkCode();
   goToSuccessSignUp();
 }
@@ -19,6 +20,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   @override
   void onInit() {
     code = '';
+    email = Get.arguments['email'];
     super.onInit();
   }
 }
