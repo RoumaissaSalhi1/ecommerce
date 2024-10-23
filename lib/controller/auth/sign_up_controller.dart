@@ -1,7 +1,7 @@
 import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
-import 'package:ecommece/data/datasource/remote/auth/signup.dart';
+import 'package:ecommece/data/datasource/remote/auth/signup_remote_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +12,7 @@ abstract class SignUpController extends GetxController {
   late TextEditingController email;
   late TextEditingController phone;
   late TextEditingController password;
+  bool isShowPassword = true;
 
   StatusRequest? statusRequest;
 
@@ -21,9 +22,16 @@ abstract class SignUpController extends GetxController {
 
   signUp();
   goToLogin();
+  showPassword();
 }
 
 class SignUpControllerImp extends SignUpController {
+  @override
+  showPassword() {
+    isShowPassword = !isShowPassword;
+    update();
+  }
+
   @override
   signUp() async {
     var formData = formState.currentState;

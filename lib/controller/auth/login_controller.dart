@@ -1,4 +1,7 @@
+import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/constant/routes.dart';
+import 'package:ecommece/core/functions/handling_data.dart';
+import 'package:ecommece/data/datasource/remote/auth/login_remote_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +10,12 @@ abstract class LoginController extends GetxController {
   late TextEditingController email;
   late TextEditingController password;
   bool isShowPassword = true;
+
+  StatusRequest? statusRequest;
+
+  List data = [];
+
+  LoginRemoteData loginRemoteData = LoginRemoteData(Get.find());
 
   login();
   goToSignUp();
@@ -22,9 +31,33 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  login() {
+  login() async {
     var formData = formState.currentState;
-    if (formData!.validate()) {}
+    if (formData!.validate()) {
+      statusRequest = StatusRequest.loading;
+      update();
+
+      var response = await loginRemoteData.postData(
+        email.text,
+        password.text,
+      );
+
+      print('----------------controller $response');
+
+      statusRequest = handlingData(response);
+
+      if (statusRequest == StatusRequest.succes) {
+        if (response['status'] == 'success') {
+          // data.addAll(response['data']);
+          Get.offNamed(AppRoute.home);
+        } else {
+          Get.defaultDialog(
+              title: 'Warning', middleText: 'Phone number or Email incorrect');
+          statusRequest = StatusRequest.failure;
+        }
+      }
+      update();
+    } else {}
   }
 
   @override
@@ -41,6 +74,7 @@ class LoginControllerImp extends LoginController {
   void onInit() {
     email = TextEditingController();
     password = TextEditingController();
+    statusRequest = null;
     super.onInit();
   }
 

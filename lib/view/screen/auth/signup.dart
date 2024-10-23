@@ -90,9 +90,15 @@ class SignUp extends StatelessWidget {
                               },
                               hintText: 'Enter Your Password',
                               labelText: 'Password',
-                              suffixIcon: Icons.key_outlined,
+                              suffixIcon: controller.isShowPassword
+                            ? Icons.lock_outlined
+                            : Icons.no_encryption_gmailerrorred_outlined,
+                             obsecureText: controller.isShowPassword,
                               fieldController: controller.password,
                               textInputType: TextInputType.visiblePassword,
+                               onTap: () {
+                          controller.showPassword();
+                        },
                             ),
                             const SizedBox(height: 24),
                             Custombuttonauth(

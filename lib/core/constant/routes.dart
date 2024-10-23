@@ -7,7 +7,9 @@ class AppRoute {
   static String resetPassword = '/resset-password';
   static String successResetPassword = '/success-reset-password';
   static String successSignUp = '/success-signup';
-   static String verifyCodeSignUp = '/verify-code-sign-up';
+  static String verifyCodeSignUp = '/verify-code-sign-up';
   //onboarding
   static String onBoarding = '/onBoarding';
+  //home
+  static String home = '/home';
 }

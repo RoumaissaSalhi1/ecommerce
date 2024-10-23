@@ -9,10 +9,14 @@ import 'package:ecommece/view/screen/auth/forgetpassword/success_reset_password.
 import 'package:ecommece/view/screen/auth/success_signup.dart';
 import 'package:ecommece/view/screen/auth/forgetpassword/verify_code.dart';
 import 'package:ecommece/view/screen/auth/verify_code_sign_up.dart';
+import 'package:ecommece/view/screen/home.dart';
 import 'package:ecommece/view/screen/onboarding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
+  //home
+  GetPage(name: AppRoute.home, page: () => const Home()),
+
   //onboarding
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
 

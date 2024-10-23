@@ -3,4 +3,5 @@ class AppLink {
 
   //auth
   static const signup = '$server/auth/signup.php';
+   static const login = '$server/auth/login.php';
 }
