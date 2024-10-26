@@ -1,6 +1,7 @@
 import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
+import 'package:ecommece/core/services/services.dart';
 import 'package:ecommece/data/datasource/remote/auth/login_remote_data.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ abstract class LoginController extends GetxController {
   late TextEditingController email;
   late TextEditingController password;
   bool isShowPassword = true;
+
+  MyServices myServices = Get.find();
 
   StatusRequest statusRequest = StatusRequest.none;
 
@@ -49,7 +52,16 @@ class LoginControllerImp extends LoginController {
 
       if (statusRequest == StatusRequest.succes) {
         if (response['status'] == 'success') {
-          // data.addAll(response['data']);
+          //  data.addAll(response['data']);
+          myServices.sharedPreferences.setString("id", response['data']['id']);
+          myServices.sharedPreferences
+              .setString('username', response['data']['username']);
+          myServices.sharedPreferences
+              .setString('email', response['data']['email']);
+          myServices.sharedPreferences
+              .setString('phone', response['data']['phone']);
+          myServices.sharedPreferences.setInt('step', 2);
+
           Get.offNamed(AppRoute.home);
         } else {
           Get.defaultDialog(
