@@ -3,5 +3,7 @@ class AppLink {
 
   //auth
   static const signup = '$server/auth/signup.php';
-   static const login = '$server/auth/login.php';
+  static const login = '$server/auth/login.php';
+  static const checkemail = '$server/auth/forgetpassword/check_email.php';
+  static const resetpassword = '$server/auth/forgetpassword/reset_password.php';
 }

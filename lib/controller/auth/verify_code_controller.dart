@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 abstract class VerifyCodeController extends GetxController {
   late String code;
+  late String email;
   checkCode();
   goToResetPassword();
 }
@@ -10,7 +11,7 @@ abstract class VerifyCodeController extends GetxController {
 class VerifyCodeControllerImp extends VerifyCodeController {
   @override
   goToResetPassword() {
-    Get.offNamed(AppRoute.resetPassword);
+    Get.offNamed(AppRoute.resetPassword, arguments: {'email': email});
   }
 
   @override
@@ -19,6 +20,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
   @override
   void onInit() {
     code = '';
+    email = Get.arguments['email'];
     super.onInit();
   }
 }

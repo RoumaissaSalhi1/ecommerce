@@ -32,8 +32,8 @@ class VerifyCode extends StatelessWidget {
               title: 'Verify Code',
             ),
             const SizedBox(height: 16),
-            const CustomHeaderText(
-              text: 'Please Enter The Digit Code Sent To ro...5@gmail.com',
+            CustomHeaderText(
+              text: 'Please Enter The Digit Code Sent To ${controller.email}',
             ),
             const SizedBox(height: 64),
             OtpTextField(

@@ -14,7 +14,7 @@ abstract class SignUpController extends GetxController {
   late TextEditingController password;
   bool isShowPassword = true;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   List data = [];
 

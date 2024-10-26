@@ -3,14 +3,14 @@ import 'package:ecommece/core/constant/color.dart';
 import 'package:ecommece/core/localization/changelocal.dart';
 import 'package:ecommece/core/localization/translaion.dart';
 import 'package:ecommece/routes.dart';
-import 'package:ecommece/view/screen/auth/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommece/core/services/services.dart';
-
+ 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+ 
   runApp(const MyApp());
 }
 

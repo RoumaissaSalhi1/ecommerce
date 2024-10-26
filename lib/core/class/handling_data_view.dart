@@ -3,8 +3,8 @@ import 'package:ecommece/core/constant/imageasset.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class HandingDataView extends StatelessWidget {
-  const HandingDataView({
+class HandlingDataView extends StatelessWidget {
+  const HandlingDataView({
     super.key,
     required this.statusRequest,
     required this.widget,
@@ -23,5 +23,26 @@ class HandingDataView extends StatelessWidget {
                 : statusRequest == StatusRequest.failure
                     ? Center(child: Lottie.asset(Imageasset.nodataLottie))
                     : widget;
+  }
+}
+
+class HandlingDataRequest extends StatelessWidget {
+  const HandlingDataRequest({
+    super.key,
+    required this.statusRequest,
+    required this.widget,
+  });
+
+  final StatusRequest statusRequest;
+  final Widget widget;
+  @override
+  Widget build(BuildContext context) {
+    return statusRequest == StatusRequest.loading
+        ? Center(child: Lottie.asset(Imageasset.loadingLottie))
+        : statusRequest == StatusRequest.offlineFailure
+            ? Center(child: Lottie.asset(Imageasset.offlineLottie))
+            : statusRequest == StatusRequest.serverFailure
+                ? Center(child: Lottie.asset(Imageasset.serverLottie))
+                : widget;
   }
 }
