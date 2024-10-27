@@ -11,6 +11,7 @@ class MyMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
+    //! Priorities ranked by importance
     if (myServices.sharedPreferences.getInt('step') == 2) {
       return RouteSettings(name: AppRoute.home);
     }

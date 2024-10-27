@@ -17,8 +17,7 @@ abstract class LoginController extends GetxController {
 
   StatusRequest statusRequest = StatusRequest.none;
 
-  List data = [];
-
+ 
   LoginRemoteData loginRemoteData = LoginRemoteData(Get.find());
 
   login();

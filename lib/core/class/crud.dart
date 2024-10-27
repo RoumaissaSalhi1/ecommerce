@@ -24,4 +24,23 @@ class Crud {
       return const Left(StatusRequest.serverException);
     }
   }
+
+   Future<Either<StatusRequest, Map>> getData(String linkUrl) async {
+    try {
+      if (await checkInternet()) {
+        var response = await http.get(Uri.parse(linkUrl));
+        if (response.statusCode == 200 || response.statusCode == 201) {
+          Map responseBody = jsonDecode(response.body);
+          return Right(responseBody);
+        } else {
+          return const Left(StatusRequest.serverFailure);
+        }
+      } else {
+        return const Left(StatusRequest.offlineFailure);
+      }
+    } catch (e) {
+      print(e);
+      return const Left(StatusRequest.serverException);
+    }
+  }
 }

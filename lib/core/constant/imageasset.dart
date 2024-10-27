@@ -7,6 +7,10 @@ class Imageasset {
   static const String onBoardingTracking = '$rootImage/tracking.png';
   static const String storeLogo = '$rootImage/store.png';
 
+  //svg
+  static const String rootSvg = 'assets/svg';
+  static const String wave = '$rootSvg/wave.svg';
+
   //lottie
   static const String rootLottie = 'assets/lottie';
   static const String loadingLottie = '$rootLottie/loading.json';
