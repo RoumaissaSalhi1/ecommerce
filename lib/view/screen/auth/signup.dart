@@ -1,8 +1,6 @@
 import 'package:ecommece/controller/auth/sign_up_controller.dart';
 import 'package:ecommece/core/class/handling_data_view.dart';
-import 'package:ecommece/core/class/status_request.dart';
-import 'package:ecommece/core/constant/imageasset.dart';
-import 'package:ecommece/core/functions/valid_input.dart';
+  import 'package:ecommece/core/functions/valid_input.dart';
 import 'package:ecommece/view/widget/auth/custom_sign_up_or_sign_in.dart';
 import 'package:ecommece/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommece/view/widget/auth/customheadertext.dart';
@@ -11,8 +9,7 @@ import 'package:ecommece/view/widget/auth/customtextformfield.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
-
+ 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 

@@ -1,10 +1,9 @@
-import 'dart:convert';
-
 import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
 import 'package:ecommece/core/services/services.dart';
 import 'package:ecommece/data/datasource/remote/home/home_remote_data.dart';
 import 'package:ecommece/data/model/categories_model.dart';
+import 'package:ecommece/data/model/items_model.dart';
 import 'package:get/get.dart';
 
 abstract class HomePageController extends GetxController {
@@ -12,6 +11,8 @@ abstract class HomePageController extends GetxController {
   String? username;
 
   List<CategoriesModel> categoriesData = [];
+
+  List<ItemsModel> itemsData = [];
 
   StatusRequest statusRequest = StatusRequest.none;
 
@@ -39,13 +40,16 @@ class HomePageControllerImp extends HomePageController {
     if (statusRequest == StatusRequest.succes) {
       if (response['status'] == 'success') {
         List categories = [];
+        List items = [];
+
         categories.addAll(response['categories']);
+
+        items.addAll(response['items']);
 
         categoriesData =
             categories.map((data) => CategoriesModel.fromJson(data)).toList();
 
-        print(categoriesData[1].nameAr);
-        
+        itemsData = items.map((data) => ItemsModel.fromJson(data)).toList();
       } else {
         Get.defaultDialog(
             title: 'Warning', middleText: 'Phone number or Email incorrect');
@@ -58,6 +62,7 @@ class HomePageControllerImp extends HomePageController {
   @override
   void onInit() {
     initialData();
+    getData();
     super.onInit();
   }
 }
