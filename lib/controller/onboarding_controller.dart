@@ -1,6 +1,6 @@
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/services/services.dart';
-import 'package:ecommece/data/datasource/static/static.dart';
+import 'package:ecommece/data/datasource/static/static_onboarding_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

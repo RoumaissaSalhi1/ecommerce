@@ -1,6 +1,6 @@
 import 'package:ecommece/controller/onboarding_controller.dart';
 import 'package:ecommece/core/constant/color.dart';
-import 'package:ecommece/data/datasource/static/static.dart';
+import 'package:ecommece/data/datasource/static/static_onboarding_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

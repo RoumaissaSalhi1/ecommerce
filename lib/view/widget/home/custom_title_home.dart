@@ -10,12 +10,18 @@ class CustomTitleHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: Theme.of(context)
-          .textTheme
-          .titleMedium!
-          .copyWith(color: Colors.deepOrange.shade900, fontSize: 20),
+    return Column(
+      children: [
+        const SizedBox(height: 16),
+        Text(
+          title,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(color: Colors.deepOrange.shade900, fontSize: 20),
+        ),
+        const SizedBox(height: 16),
+      ],
     );
   }
 }

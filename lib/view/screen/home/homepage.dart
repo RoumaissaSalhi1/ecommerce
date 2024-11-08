@@ -15,19 +15,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImp());
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Home',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        centerTitle: true,
-      ),
-      body: GetBuilder<HomePageControllerImp>(builder: (controller) {
-        return HandlingDataView(
-          statusRequest: controller.statusRequest,
-          widget: Container(
-            padding: const EdgeInsets.all(24),
+    return GetBuilder<HomePageControllerImp>(builder: (controller) {
+      return HandlingDataView(
+        statusRequest: controller.statusRequest,
+        widget: Container(
+          padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -38,24 +31,18 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const CustomOfferCard(
-                  title: 'Big Sale!',
-                  body: 'Up to 50% Discount',
-                ),
-                const SizedBox(height: 16),
+                    title: 'Big Sale!', body: 'Up to 50% Discount'),
+                const CustomTitleHome(title: 'Categories'),
                 const CategoriesList(),
-                const SizedBox(height: 16),
                 const CustomTitleHome(title: 'Products for you'),
-                const SizedBox(height: 16),
-                ItemsList(),
-                const SizedBox(height: 16),
+                const ItemsList(),
                 const CustomTitleHome(title: 'Offer'),
-                const SizedBox(height: 16),
                 ItemsList(),
               ],
             ),
           ),
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 }
