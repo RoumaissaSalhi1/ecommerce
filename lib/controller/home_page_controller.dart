@@ -1,4 +1,5 @@
 import 'package:ecommece/core/class/status_request.dart';
+import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
 import 'package:ecommece/core/services/services.dart';
 import 'package:ecommece/data/datasource/remote/home/home_remote_data.dart';
@@ -20,6 +21,7 @@ abstract class HomePageController extends GetxController {
 
   getData();
   initialData();
+  goToItems(List categories, int selectedCategory);
 }
 
 class HomePageControllerImp extends HomePageController {
@@ -64,5 +66,13 @@ class HomePageControllerImp extends HomePageController {
     initialData();
     getData();
     super.onInit();
+  }
+
+  @override
+  goToItems(List categories, int selectedCategory) {
+    Get.toNamed(AppRoute.items, arguments: {
+      'categories': categories,
+      'selectedCategory': selectedCategory
+    });
   }
 }

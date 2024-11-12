@@ -9,14 +9,15 @@ import 'package:ecommece/view/screen/auth/forgetpassword/success_reset_password.
 import 'package:ecommece/view/screen/auth/success_signup.dart';
 import 'package:ecommece/view/screen/auth/forgetpassword/verify_code.dart';
 import 'package:ecommece/view/screen/auth/verify_code_sign_up.dart';
-import 'package:ecommece/view/screen/home/homepage.dart';
 import 'package:ecommece/view/screen/home/homescreen.dart';
+import 'package:ecommece/view/screen/home/items.dart';
 import 'package:ecommece/view/screen/onboarding/onboarding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
   //home
   GetPage(name: AppRoute.home, page: () => const HomeScreen()),
+  GetPage(name: AppRoute.items, page: () => const Items()),
 
   //onboarding
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
@@ -36,21 +37,3 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
       name: AppRoute.verifyCodeSignUp, page: () => const VerifyCodeSignUp()),
 ];
-
-
-
-
-
-// Map<String, Widget Function(BuildContext)> routesflutter = {
-//   //auth
-//   AppRoute.login: (context) => Login(),
-//   AppRoute.signup: (context) => SignUp(),
-//   AppRoute.forgetPassword: (context) => ForgetPassword(),
-//   AppRoute.verifyCode: (context) => VerifyCode(),
-//   AppRoute.resetPassword: (context) => ResetPassword(),
-//   AppRoute.successResetPassword: (context) => SuccessResetPassword(),
-//   AppRoute.successSignUp: (context) => SuccessSignUp(),
-//   AppRoute.verifyCodeSignUp: (context) => VerifyCodeSignUp(),
-//   //onboarding
-//   AppRoute.onBoarding: (context) => OnBoarding(),
-// };

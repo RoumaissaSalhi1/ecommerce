@@ -1,4 +1,4 @@
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommece/controller/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,13 +21,13 @@ class ItemsList extends GetView<HomePageControllerImp> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            clipBehavior: Clip
-                .antiAlias, // Ensures rounded corners for the image
-            child: Image.network(
+            clipBehavior:
+                Clip.antiAlias, // Ensures rounded corners for the image
+            child: CachedNetworkImage(
               height: 100,
               width: 150,
               fit: BoxFit.cover,
-              controller.itemsData[index].itemImage!,
+              imageUrl: controller.itemsData[index].itemImage!,
             ),
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:ecommece/controller/home_screen_controller.dart';
-import 'package:ecommece/view/widget/home/custom_bottom_app_bar.dart';
-import 'package:ecommece/view/widget/home/custom_floating_action_button.dart';
+import 'package:ecommece/view/widget/bottomappbar/custom_bottom_app_bar.dart';
+import 'package:ecommece/view/widget/bottomappbar/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

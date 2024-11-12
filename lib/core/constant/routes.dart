@@ -12,4 +12,5 @@ class AppRoute {
   static String onBoarding = '/onBoarding';
   //home
   static String home = '/home';
+  static String items = '/items';
 }
