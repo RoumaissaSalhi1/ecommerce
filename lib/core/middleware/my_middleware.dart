@@ -19,5 +19,6 @@ class MyMiddleware extends GetMiddleware {
     if (myServices.sharedPreferences.getInt('step') == 1) {
       return RouteSettings(name: AppRoute.login);
     }
+    return null;
   }
 }

@@ -11,4 +11,7 @@ class AppLink {
 
   //Home
   static const homepage = '$server/home.php';
+
+  //Items
+  static const items = '$server/items/view.php';
 }

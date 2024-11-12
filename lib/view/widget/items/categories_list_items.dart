@@ -1,5 +1,6 @@
 import 'package:ecommece/controller/items_controller.dart';
 import 'package:ecommece/core/constant/color.dart';
+import 'package:ecommece/core/functions/translateDatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,7 @@ class Category extends GetView<ItemsControllerImp> {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
       onTap: () {
-        controller.changeCategory(index);
+        controller.changeCategory(index, controller.categoriesData[index].id!);
       },
       child: GetBuilder<ItemsControllerImp>(builder: (controller) {
         return Container(
@@ -47,7 +48,8 @@ class Category extends GetView<ItemsControllerImp> {
                 : null,
           ),
           child: Text(
-            Strings.toCapitalised(controller.categoriesData[index].name!),
+            translateDatabase(controller.categoriesData[index].nameAr!,
+                controller.categoriesData[index].name!),
             style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: index == controller.selectedCategory
                     ? Theme.of(context).colorScheme.primary

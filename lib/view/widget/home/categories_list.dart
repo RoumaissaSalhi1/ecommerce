@@ -39,7 +39,7 @@ class Category extends GetView<HomePageControllerImp> {
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: () {
-        controller.goToItems(controller.categoriesData, index);
+        controller.goToItems(controller.categoriesData, index, controller.categoriesData[index].id!);
       },
       child: Column(
         children: [

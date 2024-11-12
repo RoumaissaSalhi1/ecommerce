@@ -21,7 +21,7 @@ abstract class HomePageController extends GetxController {
 
   getData();
   initialData();
-  goToItems(List categories, int selectedCategory);
+  goToItems(List categories, int selectedCategory, String categoryId);
 }
 
 class HomePageControllerImp extends HomePageController {
@@ -53,8 +53,8 @@ class HomePageControllerImp extends HomePageController {
 
         itemsData = items.map((data) => ItemsModel.fromJson(data)).toList();
       } else {
-        Get.defaultDialog(
-            title: 'Warning', middleText: 'Phone number or Email incorrect');
+        // Get.defaultDialog(
+        //     title: 'Warning', middleText: 'Phone number or Email incorrect');
         statusRequest = StatusRequest.failure;
       }
     }
@@ -69,10 +69,11 @@ class HomePageControllerImp extends HomePageController {
   }
 
   @override
-  goToItems(List categories, int selectedCategory) {
+  goToItems(List categories, int selectedCategory, String categoryId) {
     Get.toNamed(AppRoute.items, arguments: {
       'categories': categories,
-      'selectedCategory': selectedCategory
+      'selectedCategory': selectedCategory,
+      'categoryId': categoryId,
     });
   }
 }
