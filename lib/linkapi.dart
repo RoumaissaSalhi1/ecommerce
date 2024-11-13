@@ -1,3 +1,5 @@
+import 'package:ecommece/view/screen/home/product_details.dart';
+
 class AppLink {
   static const String server = 'http://10.0.2.2/ecommerce';
 
@@ -14,4 +16,7 @@ class AppLink {
 
   //Items
   static const items = '$server/items/view.php';
+
+  //product details
+  static const ProductDetails = '$server/productdetails/veiw.php';
 }

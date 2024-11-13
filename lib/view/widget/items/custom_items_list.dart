@@ -5,7 +5,7 @@ import 'package:ecommece/data/model/items_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomItemsList extends StatelessWidget {
+class CustomItemsList extends GetView<ItemsControllerImp> {
   const CustomItemsList({
     super.key,
     required this.items,
@@ -22,6 +22,9 @@ class CustomItemsList extends StatelessWidget {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 0.67),
       itemBuilder: (context, index) => InkWell(
+        onTap: () {
+          controller.goToProductDetails(index);
+        },
         child: Card(
           clipBehavior: Clip.hardEdge,
           shape: RoundedRectangleBorder(
@@ -34,11 +37,14 @@ class CustomItemsList extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CachedNetworkImage(
-                  imageUrl: items[index].itemImage!,
-                  fit: BoxFit.cover,
-                  width: cardWidth,
-                  height: cardWidth,
+                Hero(
+                  tag: items[index].itemId!,
+                  child: CachedNetworkImage(
+                    imageUrl: items[index].itemImage!,
+                    fit: BoxFit.cover,
+                    width: cardWidth,
+                    height: cardWidth,
+                  ),
                 ),
                 Expanded(
                   child: Container(

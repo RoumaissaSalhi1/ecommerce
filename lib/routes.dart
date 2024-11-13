@@ -11,6 +11,7 @@ import 'package:ecommece/view/screen/auth/forgetpassword/verify_code.dart';
 import 'package:ecommece/view/screen/auth/verify_code_sign_up.dart';
 import 'package:ecommece/view/screen/home/homescreen.dart';
 import 'package:ecommece/view/screen/home/items.dart';
+import 'package:ecommece/view/screen/home/product_details.dart';
 import 'package:ecommece/view/screen/onboarding/onboarding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -18,6 +19,7 @@ List<GetPage<dynamic>>? routes = [
   //home
   GetPage(name: AppRoute.home, page: () => const HomeScreen()),
   GetPage(name: AppRoute.items, page: () => const Items()),
+  GetPage(name: AppRoute.productDetails, page: () => const ProductDetails()),
 
   //onboarding
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),

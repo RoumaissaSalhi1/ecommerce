@@ -6,6 +6,7 @@ import 'package:ecommece/view/widget/items/categories_list_items.dart';
 import 'package:ecommece/view/widget/items/custom_items_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:strings/strings.dart';
 
 class Items extends StatelessWidget {
   const Items({super.key});
@@ -14,39 +15,40 @@ class Items extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp());
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Items',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        centerTitle: true,
-      ),
-      body: Container(
-        padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-        child: ListView(
-          children: [
-            CustomSearchBarAndNotifications(
-              hintText: 'Find product',
-              onPressedSearch: () {},
-              onPressedIcon: () {},
+    return GetBuilder<ItemsControllerImp>(
+      builder: (controller) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              Strings.toCapitalised(
+                  controller.categoriesData[controller.selectedCategory].name!),
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
-            const SizedBox(height: 16),
-            const CategoriesListItems(),
-            const SizedBox(height: 16),
-            GetBuilder<ItemsControllerImp>(
-              builder: (controller) {
-                return HandlingDataView(
+            centerTitle: true,
+          ),
+          body: Container(
+            padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+            child: ListView(
+              children: [
+                CustomSearchBarAndNotifications(
+                  hintText: 'Find product',
+                  onPressedSearch: () {},
+                  onPressedIcon: () {},
+                ),
+                const SizedBox(height: 16),
+                const CategoriesListItems(),
+                const SizedBox(height: 16),
+                HandlingDataView(
                   statusRequest: controller.statusRequest,
                   widget: CustomItemsList(
                     items: controller.itemsData,
                   ),
-                );
-              },
+                )
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

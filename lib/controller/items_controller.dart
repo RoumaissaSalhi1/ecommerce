@@ -1,8 +1,10 @@
 import 'package:ecommece/core/class/status_request.dart';
+import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
 import 'package:ecommece/data/datasource/remote/items/items_remote_data.dart';
 import 'package:ecommece/data/model/categories_model.dart';
 import 'package:ecommece/data/model/items_model.dart';
+import 'package:ecommece/linkapi.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
@@ -19,6 +21,7 @@ abstract class ItemsController extends GetxController {
   initialData();
   getData();
   changeCategory(int index, String categoryId);
+  goToProductDetails(int index);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -26,6 +29,8 @@ class ItemsControllerImp extends ItemsController {
   initialData() {
     categoriesData = Get.arguments['categories'];
     selectedCategory = Get.arguments['selectedCategory'];
+    categoryId = Get.arguments['categoryId'];
+    getData();
   }
 
   @override
@@ -62,12 +67,17 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
+  goToProductDetails(int index) {
+    Get.toNamed(
+      AppRoute.productDetails,
+      arguments: {'itemsModel': itemsData[index]},
+    );
+  }
+
+  @override
   void onInit() {
-    selectedCategory = Get.arguments['selectedCategory'];
-    categoriesData = Get.arguments['categories'];
-    categoryId = Get.arguments['categoryId'];
     initialData();
-    getData();
+
     super.onInit();
   }
 }
