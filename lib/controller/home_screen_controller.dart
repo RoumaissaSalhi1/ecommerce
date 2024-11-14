@@ -23,8 +23,8 @@ abstract class HomeScreenController extends GetxController {
 
 class HomeScreenControllerImp extends HomeScreenController {
   @override
-  changePage(int i) {
-    currentIndex = i;
+  changePage(int currentPage) {
+    currentIndex = currentPage;
     update();
   }
 

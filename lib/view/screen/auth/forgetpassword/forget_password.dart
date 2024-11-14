@@ -1,16 +1,13 @@
 import 'package:ecommece/controller/auth/forget_password_controller.dart';
 import 'package:ecommece/core/class/handling_data_view.dart';
-import 'package:ecommece/core/class/status_request.dart';
-import 'package:ecommece/core/constant/imageasset.dart';
-import 'package:ecommece/core/functions/valid_input.dart';
+ import 'package:ecommece/core/functions/valid_input.dart';
 import 'package:ecommece/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommece/view/widget/auth/customheadertext.dart';
 import 'package:ecommece/view/widget/auth/customheadertitle.dart';
 import 'package:ecommece/view/widget/auth/customtextformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
-
+ 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
 

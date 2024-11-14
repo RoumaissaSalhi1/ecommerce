@@ -1,4 +1,15 @@
 {
   "java.configuration.updateBuildConfiguration": "interactive",
-  "cSpell.words": ["Custombuttonauth", "Getx", "Imageasset", "Servies"]
+  "cSpell.words": [
+    "checkemail",
+    "Custombuttonauth",
+    "datasource",
+    "ecommece",
+    "forgetpassword",
+    "Getx",
+    "Imageasset",
+    "resetpassword",
+    "Servies",
+    "signup"
+  ]
 }

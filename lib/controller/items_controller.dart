@@ -1,10 +1,10 @@
 import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
+import 'package:ecommece/core/services/services.dart';
 import 'package:ecommece/data/datasource/remote/items/items_remote_data.dart';
 import 'package:ecommece/data/model/categories_model.dart';
 import 'package:ecommece/data/model/items_model.dart';
-import 'package:ecommece/linkapi.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
@@ -18,10 +18,12 @@ abstract class ItemsController extends GetxController {
 
   ItemsRemoteData itemsRemoteData = ItemsRemoteData(Get.find());
 
+  MyServices myServices = Get.find();
+
   initialData();
   getData();
   changeCategory(int index, String categoryId);
-  goToProductDetails(int index);
+  goToProductDetails(ItemsModel item);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -34,6 +36,7 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
+  // ignore: avoid_renaming_method_parameters
   changeCategory(int index, String catId) {
     selectedCategory = index;
     categoryId = catId;
@@ -47,7 +50,8 @@ class ItemsControllerImp extends ItemsController {
     statusRequest = StatusRequest.loading;
     update();
 
-    var response = await itemsRemoteData.getData(categoryId);
+    var response = await itemsRemoteData.getData(
+        myServices.sharedPreferences.getString('id')!, categoryId);
 
     statusRequest = handlingData(response);
 
@@ -67,10 +71,10 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  goToProductDetails(int index) {
+  goToProductDetails(ItemsModel item) {
     Get.toNamed(
       AppRoute.productDetails,
-      arguments: {'itemsModel': itemsData[index]},
+      arguments: {'itemsModel': item},
     );
   }
 

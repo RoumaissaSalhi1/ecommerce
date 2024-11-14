@@ -5,11 +5,12 @@ class ItemsRemoteData {
   Crud crud;
   ItemsRemoteData(this.crud);
 
-  getData(String id) async {
+  getData(String userId, String categoryId) async {
     var response = await crud.postData(
       AppLink.items,
       {
-        'id': id,
+        'userId': userId,
+        'categoryId': categoryId,
       },
     );
     //print(response.fold((l) => l, (r) => r));

@@ -1,6 +1,5 @@
-import 'package:ecommece/controller/items_controller.dart';
+ import 'package:ecommece/controller/items_controller.dart';
 import 'package:ecommece/core/class/handling_data_view.dart';
-import 'package:ecommece/data/model/items_model.dart';
 import 'package:ecommece/view/widget/home/custom_searchbar_and_notifications.dart';
 import 'package:ecommece/view/widget/items/categories_list_items.dart';
 import 'package:ecommece/view/widget/items/custom_items_list.dart';

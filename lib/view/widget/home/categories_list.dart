@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommece/controller/home_page_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 import 'package:strings/strings.dart';
 
 class CategoriesList extends GetView<HomePageControllerImp> {

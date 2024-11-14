@@ -16,10 +16,10 @@ class CutomButtonOnBoarding extends GetView<OnboardingControllerImp> {
         onPressed: () {
           controller.next();
         },
-        child: Text('Continue'),
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all<Color>(ColorApp.primary),
         ),
+        child: const Text('Continue'),
       ),
     );
   }

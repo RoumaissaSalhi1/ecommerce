@@ -4,8 +4,7 @@ import 'package:ecommece/core/functions/translateDatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:strings/strings.dart';
-
+ 
 class CategoriesListItems extends GetView<ItemsControllerImp> {
   const CategoriesListItems({
     super.key,

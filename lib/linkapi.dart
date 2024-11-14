@@ -1,5 +1,3 @@
-import 'package:ecommece/view/screen/home/product_details.dart';
-
 class AppLink {
   static const String server = 'http://10.0.2.2/ecommerce';
 
@@ -19,4 +17,8 @@ class AppLink {
 
   //product details
   static const ProductDetails = '$server/productdetails/veiw.php';
+
+  //favorite
+  static const favoriteAdd = '$server/favorite/add.php';
+  static const favoriteRemove = '$server/favorite/remove.php';
 }

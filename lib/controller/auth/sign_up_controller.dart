@@ -46,7 +46,7 @@ class SignUpControllerImp extends SignUpController {
         password.text,
       );
 
-      print('----------------controller $response');
+     // print('----------------controller $response');
 
       statusRequest = handlingData(response);
 

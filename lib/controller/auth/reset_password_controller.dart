@@ -32,7 +32,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
         rePassword.text,
       );
 
-      print('----------------controller $response');
+     // print('----------------controller $response');
 
       statusRequest = handlingData(response);
 

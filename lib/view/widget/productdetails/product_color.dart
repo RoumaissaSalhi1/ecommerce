@@ -33,7 +33,7 @@ class ProductColor extends GetView<ProductDetailsControllerImp> {
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 3),
-                  boxShadow: controller.colorList[index].active!
+                  boxShadow: controller.colorList[index].active
                       ? const [
                           BoxShadow(
                             color: ColorApp.primary,
