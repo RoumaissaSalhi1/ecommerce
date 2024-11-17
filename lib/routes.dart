@@ -9,6 +9,7 @@ import 'package:ecommece/view/screen/auth/forgetpassword/success_reset_password.
 import 'package:ecommece/view/screen/auth/success_signup.dart';
 import 'package:ecommece/view/screen/auth/forgetpassword/verify_code.dart';
 import 'package:ecommece/view/screen/auth/verify_code_sign_up.dart';
+import 'package:ecommece/view/screen/home/myfavorite.dart';
 import 'package:ecommece/view/screen/home/homescreen.dart';
 import 'package:ecommece/view/screen/home/items.dart';
 import 'package:ecommece/view/screen/home/product_details.dart';
@@ -20,6 +21,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.home, page: () => const HomeScreen()),
   GetPage(name: AppRoute.items, page: () => const Items()),
   GetPage(name: AppRoute.productDetails, page: () => const ProductDetails()),
+  GetPage(name: AppRoute.favorite, page: () => const MyFavorite()),
 
   //onboarding
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),

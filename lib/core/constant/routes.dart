@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppRoute {
   //auth
   static String login = '/login';
@@ -14,4 +16,5 @@ class AppRoute {
   static String home = '/home';
   static String items = '/items';
   static String productDetails = '/product-details';
+  static String favorite = '/favorite';
 }

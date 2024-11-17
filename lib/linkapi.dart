@@ -21,4 +21,5 @@ class AppLink {
   //favorite
   static const favoriteAdd = '$server/favorite/add.php';
   static const favoriteRemove = '$server/favorite/remove.php';
+  static const favoriteView = '$server/favorite/view.php';
 }

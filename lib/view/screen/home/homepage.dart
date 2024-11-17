@@ -1,7 +1,8 @@
 import 'package:ecommece/core/class/handling_data_view.dart';
+import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/view/widget/home/categories_list.dart';
 import 'package:ecommece/view/widget/home/custom_offer_card.dart';
-import 'package:ecommece/view/widget/home/custom_searchbar_and_notifications.dart';
+import 'package:ecommece/view/widget/shared/custom_searchbar_and_notifications.dart';
 import 'package:ecommece/view/widget/home/custom_title_home.dart';
 import 'package:ecommece/view/widget/home/items_list.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,9 @@ class HomePage extends StatelessWidget {
                   hintText: 'Find Product',
                   onPressedSearch: () {},
                   onPressedIcon: () {},
+                  onPressedFavorite: () {
+                    controller.goToFavorite();
+                  },
                 ),
                 const SizedBox(height: 16),
                 const CustomOfferCard(

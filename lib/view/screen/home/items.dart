@@ -1,6 +1,6 @@
- import 'package:ecommece/controller/items_controller.dart';
+import 'package:ecommece/controller/items_controller.dart';
 import 'package:ecommece/core/class/handling_data_view.dart';
-import 'package:ecommece/view/widget/home/custom_searchbar_and_notifications.dart';
+import 'package:ecommece/view/widget/shared/custom_searchbar_and_notifications.dart';
 import 'package:ecommece/view/widget/items/categories_list_items.dart';
 import 'package:ecommece/view/widget/items/custom_items_list.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +33,7 @@ class Items extends StatelessWidget {
                   hintText: 'Find product',
                   onPressedSearch: () {},
                   onPressedIcon: () {},
+                  onPressedFavorite: () {},
                 ),
                 const SizedBox(height: 16),
                 const CategoriesListItems(),

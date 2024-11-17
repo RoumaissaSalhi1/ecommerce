@@ -22,6 +22,7 @@ abstract class HomePageController extends GetxController {
   getData();
   initialData();
   goToItems(List categories, int selectedCategory, String categoryId);
+  goToFavorite();
 }
 
 class HomePageControllerImp extends HomePageController {
@@ -75,5 +76,10 @@ class HomePageControllerImp extends HomePageController {
       'selectedCategory': selectedCategory,
       'categoryId': categoryId,
     });
+  }
+
+  @override
+  goToFavorite() {
+    Get.toNamed(AppRoute.favorite);
   }
 }
