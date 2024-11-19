@@ -15,12 +15,12 @@ class HomeScreen extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Home',
+            controller.title(),
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           centerTitle: true,
         ),
-        body: controller.listPage.elementAt(controller.currentIndex),
+        body: SafeArea(child: controller.body()),
         floatingActionButton: const CustomFloatingActionButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: const CustomBottomAppBar(),

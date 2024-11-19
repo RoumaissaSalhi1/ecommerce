@@ -17,4 +17,5 @@ class AppRoute {
   static String items = '/items';
   static String productDetails = '/product-details';
   static String favorite = '/favorite';
+  static String settings = '/settings';
 }

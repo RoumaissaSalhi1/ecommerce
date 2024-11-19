@@ -43,14 +43,6 @@ class CustomSearchBarAndNotifications extends StatelessWidget {
             size: 30,
           ),
         ),
-        const SizedBox(width: 10),
-        IconButton(
-          onPressed: onPressedFavorite,
-          icon: const Icon(
-            Icons.favorite_border_outlined,
-            size: 30,
-          ),
-        ),
       ],
     );
   }

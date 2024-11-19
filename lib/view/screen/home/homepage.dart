@@ -1,5 +1,4 @@
 import 'package:ecommece/core/class/handling_data_view.dart';
-import 'package:ecommece/core/constant/routes.dart';
 import 'package:ecommece/view/widget/home/categories_list.dart';
 import 'package:ecommece/view/widget/home/custom_offer_card.dart';
 import 'package:ecommece/view/widget/shared/custom_searchbar_and_notifications.dart';
@@ -41,7 +40,7 @@ class HomePage extends StatelessWidget {
                 const CustomTitleHome(title: 'Products for you'),
                 const ItemsList(),
                 const CustomTitleHome(title: 'Offer'),
-                ItemsList(),
+               const ItemsList(),
               ],
             ),
           ),

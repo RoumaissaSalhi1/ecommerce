@@ -13,6 +13,7 @@ import 'package:ecommece/view/screen/home/myfavorite.dart';
 import 'package:ecommece/view/screen/home/homescreen.dart';
 import 'package:ecommece/view/screen/home/items.dart';
 import 'package:ecommece/view/screen/home/product_details.dart';
+import 'package:ecommece/view/screen/home/settings.dart';
 import 'package:ecommece/view/screen/onboarding/onboarding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -22,6 +23,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.items, page: () => const Items()),
   GetPage(name: AppRoute.productDetails, page: () => const ProductDetails()),
   GetPage(name: AppRoute.favorite, page: () => const MyFavorite()),
+  GetPage(name: AppRoute.settings, page: () => const Settings()),
 
   //onboarding
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
