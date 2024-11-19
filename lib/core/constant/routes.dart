@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-
 class AppRoute {
   //auth
   static String login = '/login';
   static String signup = '/signup';
   static String forgetPassword = '/forget-password';
   static String verifyCode = '/verify-code';
-  static String resetPassword = '/resset-password';
+  static String resetPassword = '/reset-password';
   static String successResetPassword = '/success-reset-password';
   static String successSignUp = '/success-signup';
   static String verifyCodeSignUp = '/verify-code-sign-up';
@@ -18,4 +16,5 @@ class AppRoute {
   static String productDetails = '/product-details';
   static String favorite = '/favorite';
   static String settings = '/settings';
+  static String cart = '/cart';
 }

@@ -2,10 +2,8 @@ import 'package:ecommece/core/class/status_request.dart';
 import 'package:ecommece/core/functions/handling_data.dart';
 import 'package:ecommece/core/services/services.dart';
 import 'package:ecommece/data/datasource/remote/home/my_favorite_remote_data.dart';
-import 'package:ecommece/data/model/items_model.dart';
-import 'package:ecommece/data/model/my_favorite_model.dart';
-import 'package:ecommece/view/screen/home/items.dart';
-import 'package:get/get.dart';
+ import 'package:ecommece/data/model/my_favorite_model.dart';
+ import 'package:get/get.dart';
 
 abstract class MyFavoriteController extends GetxController {
   MyServices myServices = Get.find();

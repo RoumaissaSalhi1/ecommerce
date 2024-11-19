@@ -1,6 +1,6 @@
-import 'package:ecommece/view/screen/home/homepage.dart';
-import 'package:ecommece/view/screen/home/myfavorite.dart';
-import 'package:ecommece/view/screen/home/settings.dart';
+import 'package:ecommece/view/screen/homepage.dart';
+import 'package:ecommece/view/screen/myfavorite.dart';
+import 'package:ecommece/view/screen/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
